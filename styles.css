@@ -1,0 +1,275 @@
+/* ------------------------------
+   FUENTE Y RESET
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background: #0a0a0f;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ------------------------------
+   EFECTO DE NUBES AKATSUKI
+------------------------------ */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,0,43,0.3) 10%, transparent 70%);
+    animation: aura 10s infinite linear;
+    z-index: -1;
+}
+
+@keyframes aura {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-20%, -20%); }
+    100% { transform: translate(0,0); }
+}
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+.header {
+    background: rgba(10,10,20,0.95);
+    border-bottom: 3px solid #ff002b;
+    padding: 20px 0;
+    box-shadow: 0 0 25px rgba(255,0,43,0.4);
+}
+
+.header-content {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 32px;
+    text-shadow: 0 0 15px #ff002b;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* NAV */
+.navbar ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.navbar a:hover {
+    color: #ff002b;
+    text-shadow: 0 0 10px #ff002b;
+}
+
+/* BOTÓN CARRITO */
+.btn-carrito {
+    background: #ff002b;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 15px #ff002b;
+    transition: 0.3s;
+}
+
+.btn-carrito:hover {
+    transform: scale(1.1);
+}
+
+/* ------------------------------
+   HERO
+------------------------------ */
+.hero {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #0a0a0f, #140014);
+    text-align: center;
+    animation: heroGlow 6s infinite alternate;
+}
+
+@keyframes heroGlow {
+    0% { box-shadow: inset 0 0 50px #ff002b55; }
+    100% { box-shadow: inset 0 0 120px #ff002b99; }
+}
+
+.hero-content h2 {
+    font-size: 45px;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-size: 16px;
+    opacity: 0.7;
+    margin-top: 10px;
+}
+
+.btn-principal {
+    margin-top: 20px;
+    padding: 14px 28px;
+    background: #ff002b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 0 25px #ff002b;
+    transition: 0.3s;
+}
+
+.btn-principal:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 40px #ff002b;
+}
+
+/* ------------------------------
+   TIENDA Y GRID
+------------------------------ */
+.tienda .container {
+    width: 90%;
+    margin: auto;
+}
+
+.tienda h2 {
+    text-align: center;
+    margin: 40px 0;
+    font-size: 35px;
+    text-shadow: 0 0 15px #ff002b;
+}
+
+.filtros {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+/* GRID */
+.juegos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-left: 350px;
+}
+
+/* CARD */
+.juego-card {
+    background: #1b0d12;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ff002b55;
+    transition: 0.3s;
+    box-shadow: 0 0 15px #000;
+}
+
+.juego-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #ff002b;
+}
+
+.juego-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* ------------------------------
+   CARRITO (GLASS EFFECT)
+------------------------------ */
+.glass {
+    background: rgba(20,0,0,0.4);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ff002b88;
+    backdrop-filter: blur(12px);
+    position: fixed;
+    left: 20px;
+    top: 120px;
+    width: 280px;
+    box-shadow: 0 0 20px #ff002b;
+}
+
+/* Botón comprar */
+.btn-comprar {
+    width: 100%;
+    padding: 12px;
+    background: #ff002b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    color: white;
+    box-shadow: 0 0 20px #ff002b;
+}
+
+.btn-comprar:hover {
+    transform: scale(1.05);
+}
+
+/* ------------------------------
+   MODAL PAGO TARJETA
+------------------------------ */
+.modal {
+    display: none;
+    position: fixed;
+    width: 100%; 
+    height: 100%;
+    top: 0; 
+    left: 0;
+    background: #000000aa;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #1b0d12;
+    padding: 25px;
+    width: 340px;
+    border-radius: 12px;
+    border: 1px solid #ff002b77;
+    box-shadow: 0 0 25px #ff002b;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ff002b55;
+    border-radius: 6px;
+    background: #0a0a0f;
+    color: white;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+.footer {
+    margin-top: 40px;
+    text-align: center;
+    padding: 25px;
+    border-top: 2px solid #ff002b;
+    background: #0a0a0f;
+}

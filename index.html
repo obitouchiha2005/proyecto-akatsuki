@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akatsuki GameHub Futurista</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="header"><div class="container header-content">
+<div class="logo"><h1>AKATSUKI GAMEHUB</h1><p class="tagline">Organización Gaming Elite</p></div>
+<nav class="navbar"><ul><li><a href="#inicio">Inicio</a></li><li><a href="#tienda">Tienda</a></li><li><a href="#contacto">Contacto</a></li></ul></nav>
+<button id="btn-carrito" class="btn-carrito">🛒 <span id="cantidad-carrito">0</span></button>
+</div></header>
+
+<section id="inicio" class="hero"><div class="hero-content">
+<h2>Despierta Tu Poder Gamer</h2><p>Los mejores juegos reunidos por Akatsuki.</p>
+<button class="btn-principal" onclick="document.getElementById('tienda').scrollIntoView({behavior:'smooth'})">Entrar a la Tienda</button>
+</div></section>
+
+<section id="tienda" class="tienda"><div class="container">
+<h2>Catálogo Oficial (100 Juegos)</h2>
+<div class="filtros"><label><input type="checkbox" id="filtro-descuento"> Solo juegos con descuento</label></div>
+<div class="carrito-resumen glass">
+<h3>Carrito Akatsuki</h3>
+<div id="carrito-items"><p class="vacio">No hay juegos en el carrito.</p></div>
+<div class="carrito-total">
+<p>Subtotal: S/ <span id="subtotal">0.00</span></p>
+<div class="descuento-input"><input type="text" id="codigo-descuento" placeholder="Código Akatsuki"><button onclick="aplicarDescuento()">Aplicar</button></div>
+<p>Descuento: -S/ <span id="descuento-aplicado">0.00</span></p>
+<p class="total">Total: S/ <span id="total">0.00</span></p>
+</div><button class="btn-comprar" onclick="finalizarCompra()">Comprar</button></div>
+<div class="juegos-grid" id="juegos-grid"></div></div></section>
+
+<section id="contacto" class="contacto"><div class="container">
+<h2>Contacto</h2>
+<form id="formulario-contacto" class="formulario">
+<label>Nombre:</label><input type="text" id="nombre">
+<label>Email:</label><input type="email" id="email">
+<label>Mensaje:</label><textarea id="mensaje"></textarea>
+<button type="submit" class="btn-enviar">Enviar</button>
+</form></div></section>
+
+<!-- MODAL TARJETA -->
+<div id="modal-pago" class="modal"><div class="modal-content">
+<span class="close" onclick="cerrarPago()">&times;</span>
+<h2>Pagar con Tarjeta</h2>
+<form id="form-tarjeta">
+<label>Número:</label><input type="text" id="tarjeta-num" maxlength="16">
+<label>Expira:</label><input type="month" id="tarjeta-exp">
+<label>CVV:</label><input type="text" id="tarjeta-cvv" maxlength="3">
+<label>Titular:</label><input type="text" id="tarjeta-nombre">
+<button class="btn-principal" type="submit">Procesar Pago</button>
+</form><p id="pago-msg"></p>
+</div></div>
+
+<footer class="footer"><p>© 2025 Akatsuki GameHub</p><p>Desarrollado por Akatsuki</p></footer>
+<script src="script.js"></script>
+</body></html>
